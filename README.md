@@ -1,40 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## ChakraUI v2 to v3 Migration blockers
 
-## Getting Started
+This repo aims to document some of the issues users on the ChakraUI discord channel faces while migrating from v2 to v3.
 
-First, run the development server:
+Below, you'll find some of the issues, and short summary of the solution with links to the file(s) in this repo.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ### layout issue when using the Select component in `<HStack>`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+the layout shift occurs when the menu is open. The trick is to wrap the select in a parent with relative positioning and set its own position to absolute
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+see [theme-switch](https://github.com/kaf-lamed-beyt/chakra-v3-test/blob/84ecd71e75f0a2247acc38160ddaca13414c3707/components/theme-switch.tsx#L37) and the [parent](https://github.com/kaf-lamed-beyt/chakra-v3-test/blob/84ecd71e75f0a2247acc38160ddaca13414c3707/pages/index.tsx#L19)
