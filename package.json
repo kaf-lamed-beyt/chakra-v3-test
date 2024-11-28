@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "pnpm chakra-typegen && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "chakra-typegen": "npx @chakra-ui/cli typegen configs/theme.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.2.1",
