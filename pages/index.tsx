@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Box, Button, Text, HStack, Input } from "@chakra-ui/react";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { system } from "@/configs/theme";
+import { MenuDemo } from "@/components/menu-example";
 
 export default function Home() {
   console.log(system.token("colors.secondary"));
@@ -39,6 +40,10 @@ export default function Home() {
             <Button>Click me</Button>
             <Button variant="outline">Click me</Button>
           </HStack>
+        </Box>
+
+        <Box my="1em">
+          <MenuDemo />
         </Box>
       </Box>
     </>
